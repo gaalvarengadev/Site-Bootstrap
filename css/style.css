@@ -1,0 +1,113 @@
+/* Personalizações da barbearia Estilo Livre.
+   Complementa o Bootstrap: o restante do visual usa classes utilitárias. */
+
+:root {
+  --el-dourado: #f0b429;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Compensa a navbar fixa ao navegar pelas âncoras */
+section[id] {
+  scroll-margin-top: 4rem;
+}
+
+.ls-1 {
+  letter-spacing: 0.1em;
+}
+
+.hero {
+  min-height: 100vh;
+  padding-top: 5rem;
+  background:
+    linear-gradient(120deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.55)),
+    url("../img/hero-bg.svg") center / cover no-repeat;
+  background-color: #111;
+}
+
+.section-title {
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60px;
+  height: 4px;
+  background-color: var(--el-dourado);
+  border-radius: 2px;
+}
+
+.text-center .section-title::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.btn-warning {
+  --bs-btn-bg: var(--el-dourado);
+  --bs-btn-border-color: var(--el-dourado);
+  --bs-btn-hover-bg: #d99e1c;
+  --bs-btn-hover-border-color: #d99e1c;
+  color: #111;
+}
+
+.service-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 8%;
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: var(--el-dourado);
+}
+
+#carouselDepoimentos .carousel-inner {
+  min-height: 14rem;
+  display: flex;
+  align-items: center;
+}
+
+#carouselDepoimentos .carousel-item {
+  width: 100%;
+}
+
+.form-control:focus {
+  border-color: var(--el-dourado);
+  box-shadow: 0 0 0 0.25rem rgba(240, 180, 41, 0.25);
+}
+
+/* Ajustes para telas pequenas */
+@media (max-width: 575.98px) {
+  .hero {
+    min-height: auto;
+    padding-top: 7rem;
+    padding-bottom: 4rem;
+  }
+
+  .display-4 {
+    font-size: 2.25rem;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    display: none;
+  }
+}
